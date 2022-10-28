@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // var newStr, e;
+      // var alpha = [
+      //   "a",
+      //   "b",
+      //   "c",
+      //   "newStr",
+      //   "e",
+      //   "f",
+      //   "g",
+      //   "h",
+      //   "i",
+      //   "j",
+      //   "k",
+      //   "l",
+      //   "m",
+      //   "n",
+      //   "o",
+      //   "p",
+      //   "q",
+      //   "formattedStr",
+      //   "s",
+      //   "t",
+      //   "u",
+      //   "v",
+      //   "w",
+      //   "x",
+      //   "y",
+      //   "z",
+      // ];
+
+      // function isPangram(newstring) {
+      //   let pangram;
+      //   var formatted;
+
+      //   pangram = newstring.toLowerCase().split(" ");
+
+      //   let joinedStr = pangram.join("");
+
+      //   let removeDupStr = [...new Set(joinedStr)];
+
+      //   let finalStr = removeDupStr.filter(function (el) {
+      //     if (alpha.includes(el)) {
+      //       formatted = el;
+      //       return formatted;
+      //     }
+      //   });
+
+      //   let sortedStr = finalStr.sort();
+
+      //   for (let i = 0; i < alpha.length; i++) {
+      //     newStr = sortedStr[i];
+      //     e = alpha[i];
+      //   }
+
+      //   if (newStr == e) {
+      //     return true;
+      //   } else {
+      //     return false;
+      //   }
+      // }
+
+      // console.log(
+      //   isPangram("the qu8888ick b12345rown fox juaewdemps over the lazy dog")
+      // );
+
+      // let numArr = [10, 343445353, 3453445, 3453545353453];
+
+      // function sumTwoSmallestNumbers(numbers) {
+      //   let sorted = numbers.sort(function (a, b) {
+      //     return a - b;
+      //   });
+
+      //   let a = 0;
+      //   for (let i = 0; i < sorted.length; i++) {
+      //     if (i <= 1) {
+      //       a += sorted[i];
+      //     }
+      //   }
+      //   console.log(a);
+      // }
+
+      // sumTwoSmallestNumbers(numArr);
+
+      // function toCamelCase(str) {
+      //   if (str == "") {
+      //     return str;
+      //   } else {
+      //     let firstLetter, finalStr;
+      //     let strArr = [];
+      //     let newStr = str.split(`${str.includes("-") ? "-" : "_"}`);
+
+      //     for (let i = 0; i < newStr.length; i++) {
+      //       let camelLetter =
+      //         i >= 1
+      //           ? (firstLetter = newStr[i][0].toUpperCase())
+      //           : (firstLetter = newStr[i][0]);
+
+      //       finalStr = camelLetter.concat(newStr[i].split(newStr[i][0])[1]);
+      //       strArr.push(finalStr);
+      //     }
+      //     return strArr.join("");
+      //   }
+      // }
+
+      // console.log(toCamelCase(""));
+      // toCamelCase("the_stealth_warrior");
+      // console.log(toCamelCase("the_stealth_warrior"));
+      // let namesArr = [];
+      // function Likes(names) {
+      //   let formattedStr;
+      //   var str = "";
+      //   let n = 0;
+
+      //   formattedStr = names;
+
+      //   if (names.length == 0) {
+      //     return "no body likes your post yet";
+      //   } else if (names.length == 1) {
+      //     return `${names[0]} likes this`;
+      //   } else if (names.length == 2) {
+      //     return `${names[0]} and ${names[1]} likes this`;
+      //   } else if (names.length == 3) {
+      //     for (let i = 0; i < names.length; i++) {
+      //       if (i < names.length - 1) {
+      //         str = `${names[0]}, `;
+      //         str += `${names[n++]}`;
+      //       }
+      //     }
+      //     return str.concat(` and ${formattedStr[names.length - 1]} like this`);
+      //   } else {
+      //     for (let i = 0; i < names.length; i++) {
+      //       if (i < names.length - 1) {
+      //         str = `${names[0]}, `;
+      //         str += `${names[1]}`;
+      //       }
+      //     }
+
+      //     return str.concat(` and ${[names.length - 2]} others like this`);
+      //   }
+      // }
+
+      // console.log(Likes([]));
+      // console.log(Likes(["peter"]));
+      // Likes(["peter", "max"]);
+      // Likes(["peter", "max", "friend"]);
+      // console.log(
+      //   Likes([
+      //     "peter",
+      //     "max",
+      //     "friend",
+      //     "dede",
+      //     "wale",
+      //     "emeka",
+      //     "obinna",
+      //     "dadad",
+      //     "dsdsd",
+      //     "dsdcd",
+      //   ])
+      // );
+
+      // function findNextSquare(sq) {
+      //   let result = Math.sqrt(sq);
+      //   let y = result + 1;
+      //   if ((y * y) % y == 0) {
+      //     return y * y;
+      //   } else {
+      //     return -1;
+      //   }
+      // }
+
+      // console.log(findNextSquare(15241383936));
+      // findNextSquare(114);
+      // findNextSquare(36);
+      // findNextSquare(4);
+      // findNextSquare(16);
+
+      // function d(g) {
+      //   let numOne = 0;
+      //   let numtwo = 0;
+
+      //   for (let i = 0; i < g.length; i++) {
+      //     numOne += g[i][0];
+      //     numtwo += g[i][1];
+      //   }
+      //   return numOne - numtwo;
+      // }
+      // d([
+      //   [3, 0],
+      //   [9, 1],
+      //   [4, 10],
+      //   [12, 2],
+      //   [6, 1],
+      //   [7, 10],
+      // ]);
+      // the power of destructing
+      // let [on, off] = [10, 3];
+
+      // console.log(on, off);
+
+      // let str = "the-brown-fox";
+
+      // var vowels = ["a", "e", "i", "o", "u"];
+      // var answer = [];
+      // let result = [];
+      // var revised;
+
+      // function getCount(str) {
+      //   var trimmed = str.split(" ").join("").replace(/,/g, "");
+
+      //   for (var i = 0; i < trimmed.length; i++) {
+      //     revised = vowels.indexOf(trimmed.charAt(i));
+
+      //     if (vowels[revised] != undefined) {
+      //       answer.push(vowels[revised]);
+      //     }
+      //   }
+      //   checkDuplicate(answer);
+      //   return answer;
+      // }
+
+      // function checkDuplicate(arr) {
+      //   for (let i = 0; i < arr.length; i++) {
+      //     if (arr.indexOf(arr[i]) == i) {
+      //       result.push(arr[i]);
+      //     } else {
+
+      //     }
+      //   }
+      //   console.log(result);
+      // }
+
+      // getCount("Hand of Man");
+
+      //camel Casing Test
+
+      // function toWeirdCase(string) {
+      //   let r = string.split(" ");
+      //   let s;
+      //   let newstr = "";
+      //   let counter = 0;
+      //   let e;
+
+      //   for (let j = 0; j < r.length; j++) {
+      //     for (let i = 0; i < r[j].length; i++) {
+      //       s = r[j].indexOf(r[j][i], i);
+
+      //       s % 2 == 0
+      //         ? (newstr += r[j][s].toUpperCase())
+      //         : (newstr += r[j][s]);
+      //     }
+      //     if (counter++ == j) {
+      //       newstr += ",";
+      //       newestStr = newstr.split(",").join(" ");
+
+      //       e = newestStr.slice(0, newestStr.length - 1);
+      //     }
+      //   }
+      //   return e;
+      // }
+
+      // console.log(toWeirdCase("this is a test"));
+
+      // let frshArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      // //2 results per page
+      // //1-2, 3-4, 5-6
+      // let numPages = 5;
+      // let start = 1 * numPages;
+      // let end = frshArr.length / 2 + start;
+
+      // // console.log(end);
+      // console.log(frshArr.slice(start, end));
+      let string1 = "...---... .... . -.--   .--- ..- -.. .";
+      // let string2 = "...---...";
+
+      let morsecode = {
+        ".-": "A",
+        "-...": "B",
+        "-.-.": "C",
+        "-..": "D",
+        ".": "E",
+        "..-.": "F",
+        "--.": "G",
+        "....": "H",
+        "..": "I",
+        ".---": "J",
+        "-.-": "K",
+        ".-..": "L",
+        "--": "M",
+        "-.": "N",
+        "---": "O",
+        ".--.": "P",
+        "--.-": "Q",
+        ".-.": "R",
+        "...": "S",
+        "-": "T",
+        "..-": "U",
+        "...-": "V",
+        ".--": "W",
+        "-..-": "X",
+        "-.--": "Y",
+        "--..": "Z",
+        "...---...": "SOS",
+      };
+
+      //using regex to find sos
+
+      // console.log(Object.entries({ ...morsecode }));
+
+      // morsecode.find(function (el) {
+      //   console.log(el);
+      // });
+
+      // function f(str) {
+      //   if (str.includes(" ")) {
+      //     console.log(str.split(" "));
+      //     let k = str.split(" ");
+
+      //     for (let i = 0; i < k.length; i++) {
+      //       for (let j = 0; j < k[i].length; j++) {
+      //         console.log(k[i][j]);
+      //       }
+      //     }
+      //   } else {
+      //     console.log(str.split(""));
+      //   }
+      // }
+
+      // f(string1);
+      // f(string2);
+      // f("SOS, i just saw");
+
+      // let numPages = 3;
+      // let sosArr = [];
+
+      // for (let i = 0; i < [...string2].length / numPages; i++) {
+      //   let start = i * numPages;
+      //   let end = [...string2].length / numPages + start;
+      //   // console.log([...string2].slice(start, end).join(""));
+
+      //   sosArr.push([...string2].slice(start, end).join(""));
+      // }
+
+      // console.log(sosArr);
+
+      // console.log([...string2]);
+      // let count = 0;
+      // let v = "";
+      // for (let i = 0; i < [...string2].length; i++) {
+      //   v += [...string2][i];
+      //   if (v.length == 3) {
+      //     console.log(v);
+      //   }
+      //   // console.log([...string2][i]);
+      // }
+
+      // let decodeMorse = function (morseCode) {
+      //   morseCode = morseCode.split("  ");
+
+      //   let nS = [];
+      //   let nSe = [];
+
+      //   for (let i = 0; i < morseCode.length; i++) {
+      //     let r = morseCode[i].split(" ");
+      //     nS.push(r);
+
+      //     for (let j = 0; j < nS[i].length; j++) {
+      //       if (morsecode[nS[i][j]] === undefined) {
+      //         morsecode[nS[i][j]] = " ";
+      //       }
+      //       nSe.push(morsecode[nS[i][j]]);
+      //     }
+      //   }
+      //   return nSe.join("");
+      // };
+
+      // console.log(decodeMorse(string1));
+      // console.log(decodeMorse(string2));
+      // let ar1 = [1, 3, 4, 3];
+      // let ar2 = [1, 3];
+
+      // function adiff(a, b) {
+      //   a.filter(function (el, i) {
+      //     if (!b.includes(el)) {
+      //       console.log(el);
+      //     }
+      //   });
+
+      // }
+
+      //[AAAAABBBBBCCCC] = [A,A,A,A,B,B,B,B,C,C,C]
+      //A0 = A0,A1,A2/ B1=B1, B1=B2,B3,B4 and so on
+
+      // adiff(ar1, ar2);
+      // function unique_order(val) {
+      //   let x = val.split("");
+      //   let result = [];
+
+      //   for (let i = 0; i < x.length; i++) {
+      //     // console.log(i !== x.indexOf(val[i]));
+      //     if (i ) {
+      //       console.log(x.indexOf(val[i]));
+      //     }
+      //     // console.log(i, x.lastIndexOf(val[i]));
+      //   }
+      // }
+
+      // unique_order("AAAAaaaaBBBACCC");
+      // unique_order([1, 2, 2, 3, 4, 5]);
+
+      let strarr2 = ["tree", "foling", "trashy", "blue", "abcdef", "uvwxyz"];
+      let strarr4 = ["wlwsasphmxx", "owiaxujylentrklctozmymu", "wpgozvxxiu"];
+      // let strarr = [
+      //   "ejjjjmmtthh",
+      //   "zxxuueeg",
+      //   "aanlljrrrxx",
+      //   "dqqqaaabbb",
+      //   "oocccffuucccjjjkkkjyyyeehh",
+      // ];
+      // let strarr = [
+      //   "itvayloxrp",
+      //   "wkppqsztdkmvcuwvereiupccauycnjutlv",
+      //   "vweqilsfytihvrzlaodfixoyxvyuyvgpck",
+      // ];
+      let strarr = [
+        "zone",
+        "abigail",
+        "theta",
+        "form",
+        "libe",
+        "zas",
+        "theta",
+        "abigail",
+      ];
+      let strarr3 = ["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"];
+      let k = 2;
+
+      // function longestConsec(strarr, k) {
+      //   let n = strarr.length;
+      //   let newStr = [];
+      //   let newStrLength = [];
+      //   let rs = [];
+      //   let g;
+      //   if ((n = 0 || k > n || k <= 0)) {
+      //     return "";
+      //   } else {
+      //     for (let i = 0; i < strarr.length - (k - 1); i++) {
+      //       let c = strarr[i].concat(strarr.slice(i + 1, k + i));
+      //       if (c.includes(",")) {
+      //         newStr.push(c.split(",").join(""));
+      //         newStrLength.push(c.split(",").join("").length);
+      //       } else {
+      //         newStr.push(c);
+      //         newStrLength.push(c.length);
+      //       }
+      //     }
+
+      //     g = Math.max(...newStrLength);
+      //     newStr.filter(function (el, i) {
+      //       if (el.length == g) {
+      //         rs.push(el);
+      //       }
+      //     });
+      //     return rs[0];
+      //   }
+      // }
+
+      // console.log(longestConsec(strarr, k));
+      // concato(strarr2, k);
+      // concato(strarr3, (k = 3));
+      // concato(strarr4, k);
+    </script>
+  </body>
+</html>
+
+{ "adult":false, "backdrop_path":"/8xt0ILZbqPsR8BVOIoY13ck6XtL.jpg",
+"belongs_to_collection":null, "budget":0, "genres":{ "id":27, "name":"Horror" },
+{ "id":35, "name":"Comedy" }, { "id":9648, "name":"Mystery" },
+"homepage":"https://vanishingangle.com/werewolves-within", "id":800497,
+"imdb_id":"tt9288692", "original_language":"en", "original_title":"Werewolves
+Within", "overview":"When a proposed pipeline creates hostilities between
+residents of a small town, a newly-arrived forest ranger must keep the peace
+after a snowstorm confines the townspeople to an old lodge. But when a
+mysterious creature begins terrorizing the group, their worst tendencies and
+prejudices rise to the surface, and it is up to the ranger to keep the residents
+alive, both from each other and the monster which plagues them.",
+"popularity":18.096, "poster_path":"/WoG2tvwanOMlU0qsbxpf9Qd3y.jpg",
+"production_companies":{ "id":83857,
+"logo_path":"/kwC8GXtLzHN7pQi2Fh7CJ8XcuwD.png", "name":"Ubisoft Film &
+Television", "origin_country":"FR" }, { "id":46453,
+"logo_path":"/pftS6dWlYOqNKRHektMx3UiwOgS.png", "name":"Vanishing Angle",
+"origin_country":"US" }, { "id":307,
+"logo_path":"/gUi3pAUznQJpR296lw4mSVbB7zx.png", "name":"IFC Films",
+"origin_country":"US" }, "production_countries":{ "iso_3166_1":"US",
+"name":"United States of America" }, "release_date":"2021-06-25",
+"revenue":250811, "runtime":97, "spoken_languages":{ "english_name":"English",
+"iso_639_1":"en", "name":"English" }, "status":"Released", "tagline":"A
+whodunnit with teeth.", "title":"Werewolves Within", "video":false,
+"vote_average":7.2, "vote_count":13 }

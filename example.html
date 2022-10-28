@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <div class="right">
+      <div class="t"></div>
+      <div class="p">
+        <div class="a">
+          <img src="./errorBg-v2.jpg" alt="" />
+        </div>
+        <div class="a">
+          <img src="./IMG_20200714_130900.jpg" alt="" />
+        </div>
+        <div class="a">
+          <img src="./IMG_20200713_121558.jpg" alt="" />
+        </div>
+        <div class="a">
+          <img src="./d3657e8def0fe958cbb853f692f8dd97.png" alt="" />
+        </div>
+        <div class="a">
+          <img src="./IMG_20200716_081423.jpg" alt="" />
+        </div>
+      </div>
+      <button class="b">ccc</button>
+    </div>
+
+    <div class="stories">
+      <div class="story-item">
+        <div class="slide-cont">
+          <div class="filler"></div>
+        </div>
+        <img
+          class="imaging"
+          src="./d3657e8def0fe958cbb853f692f8dd97.png"
+          alt=""
+        />
+      </div>
+      <div class="story-item">
+        <div class="slide-cont">
+          <div class="filler"></div>
+        </div>
+        <img class="imaging" src="./errorBg-v2.jpg" alt="" />
+      </div>
+    </div>
+
+    <style>
+      body {
+        /* overflow: hidden; */
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .stories {
+        position: relative;
+        width: 400px;
+        height: 700px;
+        background: black;
+        margin: 0 auto;
+        z-index: 999999;
+        display: flex;
+        flex-direction: row;
+      }
+
+      .story-item {
+        width: 100%;
+        height: inherit;
+        flex-shrink: 0;
+      }
+
+      .slide-cont {
+        width: 50%;
+        height: 7px;
+        background: #ffffff4d;
+        border-radius: 5px;
+        margin: 0 auto;
+        position: relative;
+        top: 10px;
+        overflow: hidden;
+      }
+
+      .story-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .filler {
+        height: inherit;
+        width: 10%;
+        background: white;
+        border-radius: inherit;
+        transition-property: width;
+
+        transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        transition-duration: 1s;
+      }
+
+      .t {
+        position: absolute;
+        background-color: blueviolet;
+        width: 50%;
+        height: 80%;
+      }
+      .p {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        position: relative;
+        right: 909px;
+      }
+      .a {
+        height: 300px;
+        width: 300px;
+        background-color: blue;
+        margin-right: 3px;
+        position: relative;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        transition-duration: 0.5s;
+      }
+
+      .a img {
+        height: 100%;
+        width: inherit;
+
+        object-fit: cover;
+      }
+
+      .b {
+        display: block;
+        margin-top: 100px;
+        position: relative;
+        z-index: 999999;
+      }
+    </style>
+  </body>
+  <script>
+    let counte = 0;
+    let itemCount = 0;
+    let storyItem = document.querySelectorAll(".story-item");
+
+    console.log(storyItem[0]);
+
+    console.log();
+
+    let ccc = setInterval(function () {
+      console.log(counte++);
+      // count();
+      if (
+        counte ==
+        document.querySelector(".slide-cont").getBoundingClientRect().width
+      ) {
+        clearInterval(ccc);
+        storyItem[itemCount].style.display = "none";
+        itemCount++;
+      } else {
+        document.querySelector(".filler").style.width = `${counte}px`;
+      }
+    }, 50);
+
+    // document.querySelector(".filler").style.width = `${50}px`;
+    let c = document.querySelectorAll(".a");
+    let d = document.querySelector(".b");
+
+    let counter = 100;
+
+    d.addEventListener("click", function () {
+      c.forEach(function (el) {
+        el.style.transform = `translateX(${counter}%)`;
+        // el.style.transform = `translate3d(${counter}%);`;
+      });
+      counter += 100;
+      if (counter == (c.length - 1) * 100) {
+        counter = 0;
+      }
+      // console.log(c.length);
+      console.log(counter);
+    });
+
+    fetch(
+      "https://shazam.p.rapidapi.com/songs/list-artist-top-tracks?id=40008598&locale=en-US",
+      {
+        method: "GET",
+        headers: {
+          "x-rapidapi-key":
+            "14b1c43f97mshcfde5e8045fb7ffp1b8ab6jsn290886f97206",
+          "x-rapidapi-host": "shazam.p.rapidapi.com",
+        },
+      }
+    )
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  </script>
+</html>

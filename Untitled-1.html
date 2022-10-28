@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="circle-story">
+        <div class="border-grad">
+          <div class="circle"></div>
+        </div>
+        <p>New Movie Alert</p>
+      </div>
+      <div class="stories">
+        <!-- <div class="story-item">
+          <div class="slide-cont">
+            <div class="filler"></div>
+          </div>
+          <img
+            class="imaging"
+            src="./d3657e8def0fe958cbb853f692f8dd97.png"
+            alt=""
+          />
+        </div>
+
+        <div class="story-item">
+          <div class="slide-cont">
+            <div class="filler"></div>
+          </div>
+          <img class="imaging" src="./avengersendgame_lob_crd_05.jpg" alt="" />
+        </div>
+        <div class="story-item">
+          <div class="slide-cont">
+            <div class="filler"></div>
+          </div>
+          <img
+            class="imaging"
+            src="./MV5BZDQ5YjdiZWUtNDYyOC00NzYxLTk2NmUtYmVjNDc2MGYyYWI4XkEyXkFqcGdeQXVyMTEzMjQ4NzEw._V1_.jpg"
+            alt=""
+          />
+        </div> -->
+      </div>
+      <h2>Trending Now</h2>
+      <div class="click-side">
+        <!-- <div class="movie-poster">
+        <div class="fit">
+          <img id="w" alt="" />
+        </div> -->
+        <!-- <div class="title"></div>
+        <div class="release"></div>
+        <div class="genre"></div> -->
+        <!-- </div> -->
+      </div>
+    </div>
+    <button id="sendIt">Next</button>
+    <button id="back">Back</button>
+
+    <div class="category">
+      <h2>Browse by Category</h2>
+      <div class="click">
+        <div class="action">Action</div>
+        <div class="comedy">Comedy</div>
+        <div class="thriller">Thriller</div>
+        <div class="adventure">Adventure</div>
+        <div class="sci-fi">Science Fiction</div>
+      </div>
+
+      <div class="movie-cards-container spet">
+        <div class="movie-cards"></div>
+        <div class="movie-cards"></div>
+        <div class="movie-cards"></div>
+        <div class="movie-cards"></div>
+        <div id="movie-cards">
+          <p>The Kick Off</p>
+          <div class="overlay"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="movie-banner">
+      <div class="inner-banner"></div>
+    </div> -->
+
+    <style>
+      html {
+        font-size: 62.5%;
+      }
+      @font-face {
+        font-family: "Product Sans";
+        src: url(/ProductSans-Bold.woff);
+      }
+      .youu {
+        fill: crimson;
+        color: crimson;
+      }
+
+      .main h2,
+      .category h2,
+      .category div,
+      #movie-cards p {
+        font-family: "Product Sans";
+        font-size: 4rem;
+      }
+      #movie-cards p {
+        font-size: 2rem;
+        color: white;
+        text-align: center;
+        position: relative;
+        top: 12rem;
+        z-index: 999;
+      }
+      .movie-poster {
+        /* width: 250px; */
+        display: inline-block;
+        height: auto;
+        margin: 2rem;
+        /* background-color: white; */
+        background: #e0e0e0;
+        box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+        border-radius: 2rem;
+        transition: box-shadow 0.3s ease-in-out;
+      }
+
+      .movie-poster:hover {
+        box-shadow: -20px -20px 60px #bebebe, 20px 20px 60px #ffffff;
+      }
+
+      .fit {
+        height: auto;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        width: auto;
+        overflow: hidden;
+        display: inline-flex;
+      }
+      .w {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+      }
+
+      .title,
+      .release,
+      .genre,
+      .rating {
+        font-family: "Product Sans";
+        font-size: 2rem;
+        text-align: center;
+        padding-bottom: 3rem;
+        color: #575757;
+      }
+      .title {
+        padding-top: 3rem;
+      }
+
+      .release {
+        font-size: 3rem;
+        height: 5rem;
+      }
+
+      .genre {
+        font-size: 2rem;
+        height: 5rem;
+        border-bottom-right-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        font-weight: lighter;
+      }
+
+      .click-side {
+        /* padding-left: 20px;
+        margin: 0 auto; */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      }
+
+      a {
+        max-width: 30rem;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .category div {
+        color: black;
+        font-size: 1.5rem;
+        display: inline-block;
+      }
+
+      .click div {
+        height: auto;
+        width: auto;
+        background-color: #e0e0e0;
+        /* border: 2px black solid; */
+        border-radius: 2.5rem;
+        padding: 1rem;
+        margin-right: 1rem;
+      }
+
+      .movie-cards {
+        height: 20rem;
+        width: 30rem;
+        background-color: black;
+        border-radius: 1rem;
+        margin-right: 3rem;
+        margin-top: 3rem;
+      }
+      #movie-cards {
+        position: relative;
+        height: 20rem;
+        width: 30rem;
+        background-color: black;
+        border-radius: 1rem;
+        margin-right: 3rem;
+        margin-top: 3rem;
+        overflow: hidden;
+        background-position: center;
+        background-size: cover;
+      }
+
+      .movie-banner {
+        width: 100%;
+      }
+
+      .inner-banner {
+        height: 50rem;
+        width: 100%;
+        background-image: url(d3657e8def0fe958cbb853f692f8dd97.png);
+        background-position: center;
+        background-size: cover;
+      }
+
+      .movie-cards-container {
+        margin: 0 auto;
+      }
+
+      .overlay {
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        opacity: 0.6;
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+      }
+
+      .category .spet {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        overflow: hidden;
+      }
+
+      .circle-story {
+        height: 15rem;
+        width: 15rem;
+      }
+
+      .border-grad {
+        height: 10rem;
+        width: 10rem;
+        padding: 1rem;
+        position: relative;
+        background: linear-gradient(red, orange);
+        padding: 0.8rem;
+        border-radius: 50%;
+        margin: 0 auto;
+        -webkit-animation: Animate 7s ease infinite;
+        animation: Animate 7s ease infinite;
+      }
+
+      .circle {
+        height: 10rem;
+        width: 10rem;
+        background: white;
+        margin: 0 auto;
+        border-radius: 50%;
+        text-align: center;
+        /* border: 4px solid; */
+
+        font-weight: bold;
+        position: absolute;
+      }
+      .circle:hover {
+        cursor: pointer;
+      }
+
+      .circle-story p {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      .stories {
+        position: relative;
+        width: 100%;
+        height: 70rem;
+        background: black;
+        margin: 0 auto;
+        z-index: 999999;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        transform: scale(0);
+        transition: all 0.6s ease-in-out;
+        display: none;
+      }
+
+      .story-item {
+        width: 100%;
+        height: inherit;
+        flex-shrink: 0;
+        object-fit: cover;
+      }
+
+      .slide-cont {
+        width: 20%;
+        height: 0.7rem;
+        background: #ffffff4d;
+        border-radius: 5px;
+        margin: 0 auto;
+        position: relative;
+        top: 10px;
+        overflow: hidden;
+      }
+
+      .story-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .filler {
+        height: inherit;
+        width: 0%;
+        background: white;
+        border-radius: inherit;
+        transition-property: width;
+
+        transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        transition-duration: 1s;
+      }
+    </style>
+    <script>
+      let coverArt = document.getElementById("w");
+
+      let apiKey = "df007e68d38127658be2063f24f3968e";
+
+      let jsonarr = [];
+
+      let genre = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}`;
+      // let trendingMovies = `https://api.themoviedb.org/3/trending/all/day?api_key=${apiKey}`;
+      let vv;
+
+      console.log(genre);
+      let moviePoster = document.querySelector(".movie-poster");
+      var movieTitle;
+      let html, i, resultMovies;
+      let counter = 0;
+
+      function resetHtml() {
+        html = "";
+      }
+      const trendingMovies = function () {
+        // counter++;
+        if (counter < 1) {
+          counter = 0;
+          return;
+        }
+        let x = `https://api.themoviedb.org/3/trending/all/day?api_key=df007e68d38127658be2063f24f3968e&page=${counter}`;
+        // let x = `https://api.themoviedb.org/3/movie/upcoming?api_key=df007e68d38127658be2063f24f3968e&page=${counter}`;
+        fetch(x)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            console.log(data);
+
+            let ed = document.querySelector(".click-side");
+            ed.innerHTML = "";
+            data.page++;
+
+            if (data.page <= data.total_pages) {
+              newRes = fetch((x += `&page=${data.page}`));
+            }
+
+            movieTitle = data.results;
+
+            renderHtml(data);
+
+            // storing data using local storage
+
+            // localStorage.setItem("movies", JSON.stringify(data));
+
+            return movieTitle;
+          });
+      };
+
+      document.querySelector("#sendIt").addEventListener("click", function () {
+        trendingMovies((counter += 1));
+        // const newJsonData = JSON.parse(localStorage.getItem("movies"));
+        // console.log(newJsonData);
+
+        // jsonarr = newJsonData;
+
+        // renderHtml(jsonarr);
+        setTimeout(function () {
+          let eachStory = Array.from(document.querySelectorAll(".story-item"));
+          let slideCont = document.querySelectorAll(".slide-cont");
+          let filler = document.querySelectorAll(".filler");
+          let current = 0;
+          let counte = 0;
+          let x = 0;
+
+          console.log(eachStory.length);
+
+          function ddd() {
+            let ccc = setInterval(function () {
+              counte++;
+
+              if (counte == Math.trunc(slideCont[current].getBoundingClientRect().width)) {
+                eachStory[current].style.display = "none";
+
+                clearInterval(ccc);
+                counte = 0;
+                current++;
+                x++;
+                console.log(current);
+
+                if (x == eachStory.length) {
+                  document.querySelector(".stories").style.transform = `scale(0)`;
+                  document.querySelector(".stories").style.display = `none`;
+                  document.querySelector(".border-grad").style.background = "whitesmoke";
+                  document.querySelector(".circle-story").style.display = "block";
+                  counte = 0;
+                  current = 0;
+                  console.log(counte, current, eachStory.length);
+                } else {
+                }
+              } else {
+                filler[current].style.width = `${counte}px`;
+              }
+            }, 100);
+          }
+
+          document.querySelector(".circle").addEventListener("click", function () {
+            current = 0;
+            counte = 0;
+            console.log(eachStory[current]);
+
+            document.querySelector(".circle-story").style.display = "none";
+
+            document.querySelector(".stories").style.display = `block`;
+            document.querySelector(".stories").style.transform = `scale(1)`;
+
+            for (let i = 0; i < eachStory.length; i++) {
+              // window.requestAnimationFrame(ddd());
+              if (i == eachStory.length - 1) {
+                console.log("this story is done");
+              }
+
+              ddd();
+            }
+            eachStory[current].style.display = "block";
+          });
+        }, 2000);
+      });
+      document.querySelector("#back").addEventListener("click", function () {
+        trendingMovies((counter -= 1));
+      });
+
+      // trendingMovies();
+
+      document.querySelector(".click-side").addEventListener("click", function (e) {
+        e.preventDefault();
+        let clicked = e.target;
+        let c = clicked.closest(".movie-poster");
+
+        clickedMovie = `cinemaApp.html?${c.dataset.id}`;
+        // clickedMovie = `http://127.0.0.1:5000?${c.dataset.id}`;
+        window.location.href = clickedMovie;
+        console.log(clickedMovie);
+      });
+
+      function renderHtml(markup) {
+        for (let i = 0; i < markup.results.length; i++) {
+          function titleFormat(title) {
+            let formattedTitle, newTitle;
+
+            //ideal character length = 19
+            if (title.length > 19) {
+              formattedTitle = title.split(title.slice(19));
+              newTitle = formattedTitle[0].concat("...");
+              return newTitle;
+            } else {
+              return title;
+            }
+          }
+
+          // id="w"
+          genesisCinema = `<div class="story-item">
+                              <div class="slide-cont">
+                                <div class="filler"></div>
+                              </div>
+                              <img class="imaging" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2${markup.results[i].poster_path}" alt="" />
+                            </div>`;
+
+          setTimeout(function () {
+            html = `<a href="" target="_blank"><div class="movie-poster" data-id="${markup.results[i].id}">
+                                  <div class="fit loading">
+                                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2${
+                                      markup.results[i].poster_path
+                                    }" alt="" class="w"/>
+                                  </div>
+                                  <div class="title-cont">
+                                    <div class="title loading">${titleFormat(
+                                      markup.results[i].title ? markup.results[i].title : markup.results[i].name
+                                    )}</div>
+                                    <div class="rating loading">${
+                                      markup.results[i].vote_average == 0 ? "N/A" : markup.results[i].vote_average
+                                    }</div>
+                                  </div>
+                                </div></a>`;
+
+            document.querySelector(".click-side").insertAdjacentHTML("afterbegin", html);
+          }, 2000);
+
+          document.querySelector(".stories").insertAdjacentHTML("afterbegin", genesisCinema);
+        }
+
+        document.querySelector(
+          "#movie-cards"
+        ).style.backgroundImage = `url("https://image.tmdb.org/t/p/original${markup.results[2].poster_path}")`;
+      }
+
+      // const newJsonData = JSON.parse(localStorage.getItem("movies"));
+      // console.log(newJsonData);
+
+      // jsonarr = newJsonData;
+
+      // renderHtml(jsonarr);
+    </script>
+  </body>
+</html>

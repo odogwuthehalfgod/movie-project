@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NESREA</title>
+  </head>
+  <body>
+    <header>
+      <p class="logo">6IXTH</p>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#" class="nav-link">section 1</a></li>
+          <li><a href="#" class="nav-link">section 2</a></li>
+          <li><a href="#" class="nav-link">section 3</a></li>
+          <li><a href="#" class="nav-link nav-cta">section 4</a></li>
+        </ul>
+      </nav>
+      <button class="btn-mobile-nav">
+        <span class="icon-mobile-nav">=</span>
+        <span class="icon-close-nav">x</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="container">
+        <div class="hero-section">
+          <div class="page-text-side">
+            <h1>Responsive Design Learnt Professionally</h1>
+            <p class="description">
+              This is me finally learning responsive design after a long time of wallowing in my nonsense. Now i am
+              coming for everything i missed out on. Watch me as i regain my power.
+            </p>
+
+            <a href="#" class="sub-link">Subscribe</a>
+          </div>
+          <div class="page-image-side">
+            <img src="/spider-man-3-fan-poster-doctor-strange-electro.jpg" alt="" class="image-resize" />
+          </div>
+        </div>
+      </section>
+
+      <section class="about">
+        <h5>KNOW ABOUT US</h5>
+        <h1>Who we are</h1>
+      </section>
+    </main>
+
+    <style>
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        overscroll-behavior: none;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "product sans medium";
+        background: #fdf2e9;
+        font-size: 1.5rem;
+        padding: 0 4.8rem;
+      }
+
+      .logo {
+        font-family: "product sans black";
+        font-size: 1.6rem;
+      }
+
+      .nav-list {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 4.8rem;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: gray;
+      }
+
+      .nav-cta {
+        background-color: orange;
+        padding: 1rem 2.4rem;
+        color: white;
+      }
+
+      .btn-mobile-nav {
+        border: none;
+        background: none;
+      }
+      .container {
+        background: #fdf2e9;
+        /* background: #e9f4fd; */
+        padding: 4.8rem 0 9.6rem 0;
+        margin-bottom: 9.6rem;
+      }
+      .hero-section {
+        max-width: 130rem;
+        margin: 0 auto;
+        padding: 0 3.2rem;
+        display: grid;
+        gap: 9.6rem;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+      }
+
+      .page-text-side h1 {
+        font-size: 5.2rem;
+        margin-bottom: 3rem;
+        line-height: 1.1;
+        letter-spacing: -0.5px;
+        font-family: "product sans black";
+      }
+      .description {
+        font-size: 2rem;
+        color: #808080c7;
+        line-height: 1.6;
+        margin-bottom: 5rem;
+        font-family: "product sans light";
+      }
+
+      .sub-link {
+        text-decoration: none;
+        color: white;
+        background-color: orange;
+        padding: 1.6rem 3.2rem;
+        font-size: 1.5rem;
+        font-family: "product sans medium";
+        /* border-radius: 1rem; */
+      }
+
+      .image-resize {
+        width: 100%;
+      }
+
+      .about {
+        font-family: "product sans black";
+        font-size: 4rem;
+        text-align: center;
+      }
+
+      .about h1 {
+        margin-top: 0;
+      }
+
+      .about h5 {
+        font-size: 1.2rem;
+        margin-bottom: 0;
+        color: orange;
+      }
+
+      @media (max-width: 84em) {
+        .hero-section {
+          max-width: 120rem;
+        }
+      }
+
+      /*************/
+      /* 1200px width divided by 16px = 75em */
+      /*************/
+      @media (max-width: 75em) {
+        html {
+          font-size: 56.25%;
+        }
+
+        .nav-list {
+          gap: 3.2rem;
+        }
+
+        .hero-section {
+          gap: 4.8rem;
+        }
+      }
+
+      /*************/
+      /* 940px width divided by 16px = 58.75em */
+      /*************/
+
+      @media (max-width: 59em) {
+        html {
+          /* font-size at 8px */
+          font-size: 50%;
+        }
+
+        .hero-section {
+          grid-template-columns: 1fr;
+        }
+
+        .page-text-side,
+        .page-image-side {
+          text-align: center;
+        }
+
+        .image-resize {
+          width: 60%;
+        }
+      }
+    </style>
+  </body>
+</html>

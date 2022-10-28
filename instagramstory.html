@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="circle-story">
+      <div class="border-grad">
+        <div class="circle">
+          <span>📽️</span>
+        </div>
+      </div>
+      <p></p>
+    </div>
+    <div class="cont">
+      <div class="slide-parent">
+        <!-- <div class="slide" data-img="1">
+          <div class="filler"></div>
+        </div>
+        <div class="slide" data-img="2">
+          <div class="filler"></div>
+        </div>
+        <div class="slide" data-img="3">
+          <div class="filler"></div>
+        </div> -->
+      </div>
+
+      <div class="story-cont">
+        <!-- <div class="story a" data-id="1"></div>
+        <div class="story b" data-id="2"></div>
+        <div class="story c" data-id="3"></div> -->
+      </div>
+    </div>
+
+    <!-- <div class="circle-story">
+      <div class="border-grad">
+        <div class="circle"></div>
+      </div>
+      <p>New Movie Alert</p>
+    </div>
+    <div class="stories">
+      <div class="story-item">
+        <div class="slide-cont">
+          <div class="filler"></div>
+        </div>
+        <img
+          class="imaging"
+          src="./d3657e8def0fe958cbb853f692f8dd97.png"
+          alt=""
+        />
+      </div>
+
+      <div class="story-item">
+        <div class="slide-cont">
+          <div class="filler"></div>
+        </div>
+        <img class="imaging" src="./avengersendgame_lob_crd_05.jpg" alt="" />
+      </div>
+      <div class="story-item">
+        <div class="slide-cont">
+          <div class="filler"></div>
+        </div>
+        <img
+          class="imaging"
+          src="./MV5BZDQ5YjdiZWUtNDYyOC00NzYxLTk2NmUtYmVjNDc2MGYyYWI4XkEyXkFqcGdeQXVyMTEzMjQ4NzEw._V1_.jpg"
+          alt=""
+        />
+      </div>
+    </div> -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overscroll-behavior: none;
+      }
+
+      .cont {
+        position: relative;
+        top: -14px;
+        display: none;
+      }
+      .slide-parent {
+        display: flex;
+        justify-content: space-around;
+        position: absolute;
+        top: 10px;
+        width: calc(100% / 1);
+        z-index: 999;
+      }
+      .slide {
+        height: 3px;
+        width: 200px;
+        background-color: grey;
+        margin-top: 20px;
+        border-radius: 10px;
+        margin-left: 10px;
+      }
+
+      .story {
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        margin-top: 20px;
+        flex-shrink: 0;
+      }
+
+      .story img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+
+      .story-cont {
+        width: 100%;
+        height: 700px;
+        display: flex;
+        overflow: hidden;
+        margin: 0 auto;
+        transform: scale(0);
+        transition: all 0.6s ease-in-out;
+      }
+
+      .iii {
+        position: absolute;
+        top: 200px;
+      }
+
+      .a {
+        /* background-color: darkslategrey; */
+        /* background-image: url(/MV5BZGRhOTBkMTktMDkwMS00M2JmLTgwOTctMDhjZWE0M2RhYTE3XkEyXkFqcGdeQXVyNjM4NTAzMDA@._V1_.jpg); */
+        background-position: center;
+        background-size: cover;
+      }
+
+      .b {
+        background-color: darkviolet;
+
+        /* background-image: url(/MV5BZDQ5YjdiZWUtNDYyOC00NzYxLTk2NmUtYmVjNDc2MGYyYWI4XkEyXkFqcGdeQXVyMTEzMjQ4NzEw._V1_.jpg); */
+        background-position: center;
+        background-size: cover;
+      }
+
+      .c {
+        background-color: deeppink;
+        /* background-image: url(/d3657e8def0fe958cbb853f692f8dd97.png); */
+        background-position: center;
+        background-size: cover;
+      }
+
+      .circle-story {
+        height: 150px;
+        width: 150px;
+        margin: 0 auto;
+        margin-top: 200px;
+      }
+
+      .border-grad {
+        height: 100px;
+        width: 100px;
+        padding: 1rem;
+        position: relative;
+        background: linear-gradient(270deg, red, yellow);
+        background-size: 400% 100%;
+        padding: 8px;
+        border-radius: 50%;
+        margin: 0 auto;
+        -webkit-animation: AnimationName 13s ease infinite;
+        -moz-animation: AnimationName 13s ease infinite;
+        -o-animation: AnimationName 13s ease infinite;
+        animation: AnimationName 13s ease infinite;
+      }
+
+      .circle {
+        height: 100px;
+        width: 100px;
+        background: white;
+        margin: 0 auto;
+        border-radius: 50%;
+        text-align: center;
+        /* border: 4px solid; */
+
+        font-weight: bold;
+        position: absolute;
+      }
+
+      .circle span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 30px;
+      }
+      .circle:hover {
+        cursor: pointer;
+      }
+
+      .circle-story p {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 13px;
+        font-weight: bold;
+        text-align: center;
+      }
+      .stories {
+        position: relative;
+        width: 100%;
+        height: 700px;
+        background: black;
+        margin: 0 auto;
+        z-index: 999999;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        transform: scale(0);
+        transition: all 0.6s ease-in-out;
+        display: "none";
+      }
+
+      .story-item {
+        width: 100%;
+        height: inherit;
+        flex-shrink: 0;
+        object-fit: cover;
+      }
+
+      .slide-cont {
+        width: 20%;
+        height: 7px;
+        background: #ffffff4d;
+        border-radius: 5px;
+        margin: 0 auto;
+        position: relative;
+        top: 10px;
+        overflow: hidden;
+      }
+
+      .story-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .filler {
+        height: inherit;
+        width: 0%;
+        background: white;
+        border-radius: inherit;
+        transition-property: width;
+
+        transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        transition-duration: 1s;
+      }
+
+      @-webkit-keyframes AnimationName {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      @-moz-keyframes AnimationName {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      @-o-keyframes AnimationName {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      @keyframes AnimationName {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
+  </body>
+
+  <script>
+    async function q() {
+      let r;
+      try {
+        let data = await fetch(
+          `https://api.themoviedb.org/3/trending/all/day?api_key=df007e68d38127658be2063f24f3968e`
+        );
+
+        if (!data.ok) throw new Error(`This resource was not found`);
+        r = await data.json();
+      } catch (error) {
+        console.error(`this is the problem: ${error}`);
+        document.querySelector(".circle-story p").innerHTML = `${error.message}`;
+      }
+
+      r.results.map(function (el) {
+        html = ` 
+                        <div class="slide" data-img="${el.id}">
+                        <div class="filler"></div>
+                        </div>
+                    `;
+
+        html2 = `<div class="story a" data-id="${el.id}">
+                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2${el.poster_path}" alt="" />"
+                </div>`;
+
+        document.querySelector(".slide-parent").insertAdjacentHTML("afterbegin", html);
+        document.querySelector(".story-cont").insertAdjacentHTML("afterbegin", html2);
+      });
+
+      let slides = document.querySelectorAll(".slide");
+      let story = document.querySelectorAll(".story");
+      let current = 0;
+      let now = new Date();
+      let month = now.toLocaleString("default", { month: "long" });
+
+      document.querySelector(".circle-story p").innerHTML = `Coming in Hot 🔥 this ${month}`;
+
+      ///////////////////////////////
+
+      var t = 2100;
+      var f = -1;
+      var x = 0;
+
+      setTimeout(() => {
+        let full = 0;
+
+        function ddd(n) {
+          let sss = setInterval(() => {
+            current++;
+
+            if (current == slides[n].getBoundingClientRect().width) {
+              full = 100;
+              clearInterval(sss);
+
+              story[n].style.display = "none";
+
+              current = 0;
+            } else {
+              full = 0;
+              document.querySelectorAll(".filler")[n].style.width = `${current + 1}px`;
+            }
+            console.log(current);
+          }, 20);
+        }
+
+        document.querySelector(".circle").addEventListener("click", function () {
+          document.querySelector(".circle-story").style.display = `none`;
+          story.forEach(function (el, i) {
+            el.style.display = "flex";
+            slides[i].style.display = "inline-block";
+            document.querySelectorAll(".filler")[i].style.width = 0;
+            document.querySelectorAll(".filler")[i].style.transition = "none";
+          });
+          document.querySelector(".story-cont").style.transform = `scale(${1})`;
+          document.querySelector(".cont").style.display = `block`;
+          full = 0;
+          var set1 = setTimeout(function cx() {
+            x++;
+            f++;
+            // t += 500;
+            // t *= 2.5;
+
+            if (f == story.length) {
+              clearTimeout(set1);
+              document.querySelector(".circle-story").style.display = `block`;
+              document.querySelector(".border-grad").style.background = `whitesmoke`;
+              console.log(f, story.length);
+              x = -1;
+
+              f = -1;
+              console.log("finished");
+              return;
+            } else {
+              set1 = setTimeout(cx, t);
+            }
+
+            ddd(f);
+          }, t);
+        });
+      });
+
+      ///////////////////////////////
+    }
+
+    q();
+  </script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" src="mumu.js"></script>
+  </head>
+  <body>
+    <!-- 
+        1. Major product name - Pink Tulip flowers
+        2. Category name - Bouquet of tulip flowers
+        3. Image of flowers and possibly with slideshow
+
+     -->
+
+    <div class="custom-product-box">
+      <div class="custom-main-product">
+        <img src="IMG_20200716_081423.jpg" alt="" />
+        <h1>Pink Tulip Flowers</h1>
+        <p class="p-desc">Bouquet of tulip flowers</p>
+      </div>
+      <div class="custom-main-product">
+        <img src="IMG_20200713_121558.jpg" alt="" />
+        <h1>Pink Tulip Flowers</h1>
+        <p class="p-desc">Bouquet of tulip flowers</p>
+      </div>
+      <div class="custom-main-product">
+        <img src="IMG_20200714_130900.jpg" alt="" />
+        <h1>Pink Tulip Flowers</h1>
+        <p class="p-desc">Bouquet of tulip flowers</p>
+      </div>
+      <div class="custom-main-product">
+        <img src="IMG_20200714_130900.jpg" alt="" />
+        <h1>Pink Tulip Flowers</h1>
+        <p class="p-desc">Bouquet of tulip flowers</p>
+      </div>
+    </div>
+
+    <style>
+      body {
+        background-color: rgb(242, 242, 242);
+      }
+      .custom-product-box {
+        width: 1100px;
+        margin: 0 auto;
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 100px;
+        background-color: rgb(242, 242, 242);
+      }
+      .custom-main-product {
+        background-color: white;
+        width: 260px;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+      }
+
+      .custom-main-product img {
+        max-width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+
+      .custom-main-product h1 {
+        font-size: 30px;
+        padding-right: 10px;
+        padding-left: 10px;
+      }
+      .custom-main-product p {
+        color: grey;
+      }
+    </style>
+  </body>
+</html>
